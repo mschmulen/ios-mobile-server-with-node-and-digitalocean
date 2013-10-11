@@ -1,39 +1,40 @@
-
 ##Standing up Mobile Services With Node.js and Digital Ocean
 
-the tagline "Digital Ocean provides blazing fast SSD cloud servers at only $5/month" does not due Cloud provider Digital Ocean justice.
+The tagline "Digital Ocean provides blazing fast SSD cloud servers at only $5/month" does not do Cloud provider Digital Ocean justice.
 
-In addition to the performance of the server instance ( a droplet in Digital Ocean lingo ).
+In addition to the performance of the server instance (a droplet in Digital Ocean lingo), Digital Ocean has become a favorite of developers for the following reasons:
 
-Digital Ocean has become a favorite of developers for the following reasons:
-
-- low cost performance 
-- Droplets standup fast, very fast ( 59 seconds fast )
-- Static external IP address for every droplet
-- Droplet's disk, RAM, and IP address are all reserved while the droplet is off
+- Low cost performance. 
+- Droplets standup fast. Very fast (59 seconds fast!).
+- Static external IP address for every droplet.
+- Droplet's disk, RAM, and IP address are all reserved while the droplet is off.
 - Snapshot feature allows you to save the droplet after you have destroyed the instance.  
-	-- Preserving costs and making for a fast standup of your configuration for developer Sandbox  preserving costs)
-	--You will be able to create a new droplet from the snapshot image anytime to bring it back online.
+	-- Preserving costs and making for a fast standup of your configuration for developer Sandbox preserving costs)
+	-- You will be able to create a new droplet from the snapshot image any time to bring it back online.
 
 ##Creating and Configuring your Digital Ocean Virtual Machine
 
-Login to [Digital Ocean] (http://digitalocean.com ) and Create your droplet in less than a minute
+Login to [Digital Ocean] (http://digitalocean.com), where you can create your droplet in less than a minute.
+
 ![Image](screenshots/digitalOceanPostLogin.png?raw=true)
 
-1. Configure your host name, Size and Region .
+1. Configure your host name, Size and Region.
+2. 
 ![Image](screenshots/digitalOceanConfigHostName.png?raw=true)
 ![Image](screenshots/digitalOceanConfigSize.png?raw=true)
 ![Image](screenshots/digitalOceanConfigRegion.png?raw=true)
 
-2. Select your Image, in this walk through I will create it from Linux Ubuntu 12.04 x32.  However you can start from an "Application" image such as Docker or WordPress, or from one of your own "SnapShot" image ( these are great for standing up a dev stage fast).
-![Image](screenshots/digitalOceanConfigImage.png?raw=true)
+2. Select your Image, in this walk through I will create it from Linux Ubuntu 12.04 x32.  However, you can start from an "Application" image such as Docker or WordPress, or from one of your own "SnapShot" images (these are great for standing up a dev stage fast).
+!
+[Image](screenshots/digitalOceanConfigImage.png?raw=true)
 
-3. Count to 60 ... literally
+3. Count to 60 ... literally.
+4. 
 ![Image](screenshots/digitalOceanCreating.png?raw=true)
 
 ### Standing up your Node.js mobile services with StrongLoop
 
-Now that your Virtual Machine droplet is up, check your email for your login, password and IP Address
+Now that your Virtual Machine droplet is up, check your email for your login, password and IP Address.
 
 ![Image](screenshots/digitalOceanActive.png?raw=true)
 
@@ -65,10 +66,10 @@ s. Additionally it will download and install the latest StrongLoop Debian distro
 To run the script on your server:
   1. copy the contents of [script.sh](script.sh) to your copy buffer with CMD+Copy
   2. From the terminal you can simply 'yack yack github.com/yackyack/script.sh'
-Just copy past the script to your command line with. 
+Just copy paste the script to your command line. 
   3. and then run the command with 'chmod +x script.sh; ./script.sh'
 
-3. Stand Up your LoopBack Mobile Server with the following commands
+3. Stand Up your LoopBack Mobile Server with the following commands:
 
 ```sh
 cd /var/apps
@@ -81,8 +82,7 @@ slc lb model customer
 slc install
 ```
 
-you can verify the installation by starting your server with
-'slc run app.js' and open a web browser on your local machine to the servers address and the default port http://192.111.111.111:3000/explorer
+You can verify the installation by starting your server with 'slc run app.js' and open a web browser on your local machine to the server's address and the default port http://192.111.111.111:3000/explorer
 
 Now that you have a loopback mobile server with mobile models for product, store, and customer you can use them from your mobile application development workflow.
 
@@ -90,17 +90,17 @@ Now that you have a loopback mobile server with mobile models for product, store
 
 Now we can integrate a mobile application with our Digital Ocean SSD virtual machine and the LoopBack Node API server using the native LoopBack iOS SDK.
 
-The best part is we don't even need to install Node or LoopBack on our local dev machine ( although this is useful if you want to run your development cycle on your local box when your disconnected from the network ).  You can download the iOS .Framework SDK directly from (http://github.com/strongloop-community)[http://github.com/strongloop-community/loopback-ios-sdk] and start with your process.
+The best part is we don't even need to install Node or LoopBack on our local dev machine (although this is useful if you want to run your development cycle on your local box when your disconnected from the network). You can download the iOS Framework SDK directly from (http://github.com/strongloop-community)[http://github.com/strongloop-community/loopback-ios-sdk] and start with your process.
 
-1. Clone the iOS example apps on your local machine
+1. Clone the iOS example apps on your local machine.
 
 ```sh
 git clone git@github.com:strongloop-community/loopback-examples-ios.git
 ```
 
-2. Open the TableView example in XCode ( you should also checkout the MapView and Remote Procedure projects as well)
+2. Open the TableView example in XCode. Yyou should also checkout the MapView and Remote Procedure projects as well.
 
-You can open the XCode project with the following command on your local dev machine.
+You can open the XCode project with the following command on your local dev machine:
 
 ```sh
 open loopback-examples-ios/ios-tableview-simple-example/tableview-example.xcodeproj
