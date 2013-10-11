@@ -88,12 +88,59 @@ Now that you have a loopback mobile server with mobile models for product, store
 
 ### Integrating your Native iOS App
 
-lets integrate a mobile application with our Digitial Ocean hosted LoopBack Node API server using the native LoopBack iOS SDK.
+Now we can integrate a mobile application with our Digital Ocean SSD virtual machine and the LoopBack Node API server using the native LoopBack iOS SDK.
 
-1.
-2.
-3.
-4.
+The best part is we don't even need to install Node or LoopBack on our local dev machine ( although this is useful if you want to run your development cycle on your local box when your disconnected from the network ).  You can download the iOS .Framework SDK directly from (http://github.com/strongloop-community)[http://github.com/strongloop-community/loopback-ios-sdk] and start with your process.
+
+1. Clone the iOS example apps on your local machine
+
+```sh
+git clone git@github.com:strongloop-community/loopback-examples-ios.git
+```
+
+2. Open the TableView example in XCode ( you should also checkout the MapView and Remote Procedure projects as well)
+
+You can open the XCode project with the following command on your local dev machine.
+
+```sh
+open loopback-examples-ios/ios-tableview-simple-example/tableview-example.xcodeproj
+```
+
+3. Update the endpoint URL to match you newly instantiated Digital Ocean virtual machine IP address, my modifying the AppDelegate.m file in the tableview-example group:
+
+change :
+
+```
++ (LBRESTAdapter *) adapter
+{
+    if( !_adapter)
+        _adapter = [LBRESTAdapter adapterWithURL:[NSURL URLWithString:@"http://localhost:3000"]];
+    return _adapter;
+}
+```
+
+to
+
+```
++ (LBRESTAdapter *) adapter
+{
+    if( !_adapter)
+        _adapter = [LBRESTAdapter adapterWithURL:[NSURL URLWithString:@"http://192.111.111.111:3000"]];
+    return _adapter;
+}
+```
+
+4. Run the project in the simulator by with the Command-R hot key or press the play triangle in the top left corner of XCode.
+
+The Examples app will leverage the "product" model that you defined when creating your LoopBack Node Server instance, so you can simply explore the code in the ViewController.m file to see how to Create, Read, Update and Delete Mobile defined models from your Objective-C iOS mobile Application.
+
+There is no need to define a static model schema, since LoopBack will allow the Mobile Developer to define the Model attributes dynamically from the mobile Application.
+
+Make sure and checkout the LoopBack documentation on how to leverage the built in filter functions and also to Connect your Node.js mobile objects to additional connectors or Server data stores such as MongoDB or Oracle.
+
+### 'Snapshot' your Droplet for on demand mobile backend
+
+Now that you have your StrongLoop Loopback server configured and your mobile application connected you can take advantage of Digital Oceans Snapshot feature.  This makes it fast and easy to spin up a mobile backend in a few seconds with zero server configuration.
 
 ### Whats Next
 
