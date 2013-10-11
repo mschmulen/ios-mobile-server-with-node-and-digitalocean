@@ -97,11 +97,7 @@ lets integrate a mobile application with our Digitial Ocean hosted LoopBack Node
 
 ### Whats Next
 
-You can find detailed information regarding (Memory Management) (Threading) and (Using JavaScriptCore with a WebView) at the Apple Developer documentation.
-
-The combination of JavaScript support in your native iOS client and the proliferation of JavaScript server technology Node.js makes for exciting opportunities in "asymmetric" JavaScript code re-use for your native iOS App, web client and of course backend Node.js server.
-
-If you make an interesting app leveraging the JavaScript Bridget make sure and post your links below so I can follow up.
+You can find detailed information on StrongLoop LoopBack and the native iOS SDK [StrongLoop.com](http://StrongLoop.com) and of course Digital Ocean configuration and pricing information at [Digital Ocean]( http://digitalocean.com)
 
 If you have any questions on how JavaScript can accelerate your mobile development efforts drop us a line at [Node Republic] (http://strongloop.com/node-republic) !
 
