@@ -57,7 +57,7 @@ Last login: Fri May  3 18:28:34 2013
 root@MobileServices:~#
 ```
 
-2. Now Lets configure the server with the StrongLoop Node distro, to make this step easier I created a small [shell script](script.sh) to install dependencies get you up quickly. 
+2. Now Lets configure the server with the StrongLoop Node distro, to make this step easier I created a small [install script](install.sh) to install dependencies get you up quickly. 
 
 The script will update apt-get and install some of the usual suspects: python-software-properties, vim git subversion curl , memcached, build-essential, etc ( feel free to modify for your specific configurations)
 s. Additionally it will download and install the latest StrongLoop Debian distro from [StrongLoop](StrongLoop.com).  Finally the script will create a /var/apps folder for you to hold your Node applications.
