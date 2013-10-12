@@ -1,6 +1,8 @@
 
 ##Standing up Mobile Services With Node.js and Digital Ocean
 
+![Image](screenshots/splash700x400.png?raw=true)
+
 the tagline "Digital Ocean provides blazing fast SSD cloud servers at only $5/month" does not due Cloud provider Digital Ocean justice.
 
 In addition to the performance of the server instance ( a droplet in Digital Ocean lingo ).
