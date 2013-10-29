@@ -1,11 +1,10 @@
+#Using a Digital Ocean Droplet for on demand mobile backend
 
-##Standing up Mobile Services With Node.js and Digital Ocean
+![Image](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/raw/master/screenshots/splash700x400.png?raw=true)
 
-![Image](screenshots/splash700x400.png?raw=true)
+The tagline "Digital Ocean provides blazing fast SSD cloud servers at only $5/month" does not due Cloud provider Digital Ocean justice.
 
-the tagline "Digital Ocean provides blazing fast SSD cloud servers at only $5/month" does not due Cloud provider Digital Ocean justice.
-
-In addition to the performance of the server instance ( a droplet in Digital Ocean lingo ).
+In addition to the performance of the server instance (a droplet in Digital Ocean lingo).
 
 Digital Ocean has become a favorite of developers for the following reasons:
 
@@ -13,31 +12,36 @@ Digital Ocean has become a favorite of developers for the following reasons:
 - Droplets standup fast, very fast ( 59 seconds fast )
 - Static external IP address for every droplet
 - Droplet's disk, RAM, and IP address are all reserved while the droplet is off
-- Snapshot feature allows you to save the droplet after you have destroyed the instance.  
-	-- Preserving costs and making for a fast standup of your configuration for developer Sandbox  preserving costs)
-	--You will be able to create a new droplet from the snapshot image anytime to bring it back online.
+- Snapshot feature allows you to save the droplet after you have destroyed the instance.
+	- Preserving costs and making for a fast standup of your configuration for developer Sandbox  preserving costs)	
+    - You will be able to create a new droplet from the snapshot image anytime to bring it back online.
 
 ##Creating and Configuring your Digital Ocean Virtual Machine
 
-Login to [Digital Ocean] (http://digitalocean.com ) and Create your droplet in less than a minute
-![Image](screenshots/digitalOceanPostLogin.png?raw=true)
+1. Login to [Digital Ocean](http://digitalocean.com ) and Create your droplet in less than a minute.
+![Image](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/raw/master/screenshots/digitalOceanPostLogin.png?raw=true)
 
-1. Configure your host name, Size and Region .
-![Image](screenshots/digitalOceanConfigHostName.png?raw=true)
-![Image](screenshots/digitalOceanConfigSize.png?raw=true)
-![Image](screenshots/digitalOceanConfigRegion.png?raw=true)
+1. Configure your host name
+![Image](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/raw/master/screenshots/digitalOceanConfigHostName.png?raw=true)
 
-2. Select your Image, in this walk through I will create it from Linux Ubuntu 12.04 x32.  However you can start from an "Application" image such as Docker or WordPress, or from one of your own "SnapShot" image ( these are great for standing up a dev stage fast).
-![Image](screenshots/digitalOceanConfigImage.png?raw=true)
+1. Select your configration size.
+![Image](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/raw/master/screenshots/digitalOceanConfigSize.png?raw=true)
 
-3. Count to 60 ... literally
-![Image](screenshots/digitalOceanCreating.png?raw=true)
+1. Select your region.
+![Image](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/raw/master/screenshots/digitalOceanConfigRegion.png?raw=true)
+
+1. Select your Image, in this walk through I will create it from Linux Ubuntu 12.04 x32.  However you can start from an "Application" image such as Docker or WordPress, or from one of your own "SnapShot" image ( these are great for standing up a dev stage fast).
+![Image](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/raw/master/screenshots/digitalOceanConfigImage.png?raw=true)
+
+1. Count to 60.
+![Image](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/raw/master/screenshots/digitalOceanCreating.png?raw=true)
 
 ### Standing up your Node.js mobile services with StrongLoop
 
-Now that your Virtual Machine droplet is up, check your email for your login, password and IP Address
+![Image](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/raw/master/screenshots//digitalOceanActive.png?raw=true)
 
-![Image](screenshots/digitalOceanActive.png?raw=true)
+Now that your Virtual Machine droplet is up, check your email for your login, password and IP Address.
+The email will look like:
 
 ```
 Yay! Your new Droplet has been created!
@@ -50,7 +54,6 @@ Password: yanzfapgryvh
 ```
 
 1. From the terminal ssh to your new instance with `ssh root@192.111.111.111' and the password provided.
-
 ```
 Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-24-virtual i686)
 
@@ -59,14 +62,14 @@ Last login: Fri May  3 18:28:34 2013
 root@MobileServices:~#
 ```
 
-2. Now Lets configure the server with the StrongLoop Node distro, to make this step easier I created a small [install script](install.sh) to install dependencies get you up quickly. 
+2. Now Lets configure the server with the StrongLoop Node distro, to make this step easier I created a small [install script](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/blob/master/install.sh) to install dependencies get you up quickly.
 
 The script will update apt-get and install some of the usual suspects: python-software-properties, vim git subversion curl , memcached, build-essential, etc ( feel free to modify for your specific configurations)
 s. Additionally it will download and install the latest StrongLoop Debian distro from [StrongLoop](StrongLoop.com).  Finally the script will create a /var/apps folder for you to hold your Node applications.
 
 To run the script on your server:
-  1. copy the contents of [script.sh](script.sh) to your copy buffer with CMD+Copy
-  2. From the terminal you can simply 'yack yack github.com/yackyack/script.sh'
+  1. copy the contents of [script.sh](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/blob/master/install.sh) to your copy buffer with CMD+Copy
+  2. From the terminal you can simply 'wget http://raw.github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/master/install.sh'
 Just copy past the script to your command line with. 
   3. and then run the command with 'chmod +x script.sh; ./script.sh'
 
@@ -143,11 +146,3 @@ Make sure and checkout the LoopBack documentation on how to leverage the built i
 ### 'Snapshot' your Droplet for on demand mobile backend
 
 Now that you have your StrongLoop Loopback server configured and your mobile application connected you can take advantage of Digital Oceans Snapshot feature.  This makes it fast and easy to spin up a mobile backend in a few seconds with zero server configuration.
-
-### Whats Next
-
-You can find detailed information on StrongLoop LoopBack and the native iOS SDK [StrongLoop.com](http://StrongLoop.com) and of course Digital Ocean configuration and pricing information at [Digital Ocean]( http://digitalocean.com)
-
-If you have any questions on how JavaScript can accelerate your mobile development efforts drop us a line at [Node Republic] (http://strongloop.com/node-republic) !
-
-
