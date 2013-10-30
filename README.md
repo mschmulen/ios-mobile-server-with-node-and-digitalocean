@@ -93,7 +93,10 @@ Now that you have a loopback mobile server with mobile models for product, store
 
 ### Integrating your Native iOS App
 
-Now we can integrate a mobile application with our Digital Ocean SSD virtual machine and the LoopBack Node API server using the native LoopBack iOS SDK.
+
+![image](https://raw.github.com/strongloop-community/loopback-examples-ios/master/screenshots/sample-examples-ios-all.png)
+
+Now we can integrate a mobile application with our Digital Ocean SSD virtual machine and the [LoopBack Node API server](http://docs.strongloop.com/loopback/) using the [native LoopBack iOS SDK](http://docs.strongloop.com/loopback/#ios-api).
 
 The best part is we don't even need to install Node or LoopBack on our local dev machine ( although this is useful if you want to run your development cycle on your local box when your disconnected from the network ).  You can download the iOS .Framework SDK directly from (http://github.com/strongloop-community)[http://github.com/strongloop-community/loopback-ios-sdk] and start with your process.
 
@@ -135,13 +138,13 @@ to
 }
 ```
 
-4. Run the project in the simulator by with the Command-R hot key or press the play triangle in the top left corner of XCode.
+4. Run the project in the simulator by with the ( ⌘ + R ) hot key or press the play triangle in the top left corner of XCode.
 
 The Examples app will leverage the "product" model that you defined when creating your LoopBack Node Server instance, so you can simply explore the code in the ViewController.m file to see how to Create, Read, Update and Delete Mobile defined models from your Objective-C iOS mobile Application.
 
 There is no need to define a static model schema, since LoopBack will allow the Mobile Developer to define the Model attributes dynamically from the mobile Application.
 
-Make sure and checkout the LoopBack documentation on how to leverage the built in filter functions and also to Connect your Node.js mobile objects to additional connectors or Server data stores such as MongoDB or Oracle.
+Make sure and checkout the LoopBack documentation on how to leverage the built in [filter functions](http://docs.strongloop.com/loopback/#find-with-a-filter) and also to Connect your Node.js mobile objects to additional connectors or Server data stores such as [MongoDB](http://docs.strongloop.com/loopback/#working-with-data-sources-and-connectors) or [Oracle](http://docs.strongloop.com/loopback/#working-with-data-sources-and-connectors).
 
 ### 'Snapshot' your Droplet for on demand mobile backend
 
