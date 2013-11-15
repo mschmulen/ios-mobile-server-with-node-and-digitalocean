@@ -69,7 +69,7 @@ s. Additionally it will download and install the latest StrongLoop Debian distro
 
 To run the script on your server:
   1. copy the contents of [script.sh](https://github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/blob/master/install.sh) to your copy buffer with CMD+Copy
-  2. From the terminal you can simply 'wget http://raw.github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/master/install.sh'
+  2. From the terminal you can simply 'wget -O install.sh http://raw.github.com/mschmulen/ios-mobile-server-with-node-and-digitalocean/master/install.sh'
 Just copy past the script to your command line with. 
   3. and then run the command with 'chmod +x script.sh; ./script.sh'
 
